@@ -1,0 +1,7 @@
+PatientID;Childhood;BMI;Family_History;Type1;Diet
+0;8;normal;false;false;healthy
+1;8;underweight;true;false;unhealthy
+2;4;overweight;true;false;medium
+3;2;obese;false;true;unhealthy
+4;5;Normal;false;false;unhealthy
+
