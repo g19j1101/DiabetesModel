@@ -2,8 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Mars.Common.Core.Collections;
-using Mars.Components.Environments;
 using Mars.Components.Layers;
 using Mars.Core.Data;
 using Mars.Interfaces.Data;
@@ -29,8 +27,6 @@ public class FoodScoreLayer : AbstractLayer
         var initLayer = base.InitLayer(layerInitData, registerAgentHandle, unregisterAgentHandle);
         
         var agentManager = layerInitData.Container.Resolve<IAgentManager>();
-
-       // PatientEnvironment = new AbstractEnvironment();
 
         Patients = agentManager.Spawn<Patient, FoodScoreLayer>().ToList();
         
@@ -74,11 +70,6 @@ public class FoodScoreLayer : AbstractLayer
     #endregion
 
     #region Fields and Properties
-
-    /// <summary>
-    ///     The environment of the Patient agents
-    /// </summary>
-   // public AbstractEnvironment PatientEnvironment { get; set; }
     
     public List<(string, int)> Healthy { get; set; }
 

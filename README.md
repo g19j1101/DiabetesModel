@@ -28,8 +28,7 @@ The model can be configured via a JavaScript Object Notation (JSON) file called 
 - `startTime` and `endTime`: the start time and end time, respectively, of the simulation
 - `deltaT`: the length of a single time step. The simulation time is given by the number of `deltaT` time steps that fit into the range defined by `startTime` and `endTime`
 - `layers`: the layer types that should be included in the simulation
-- `agents`: the agent types that should be included in the simulation
-  - The number of agents can be changed here by updating the value of the `count` key of each agent type.
+- `agents`: the agent types that should be included in the simulation. By default, five instances of the `Patient` agent are run. They have varying data corresponding to healthy, medium and unhealthy history. 
 
 For more detailed information on configuration parameters, please view the MARS documentation [here](https://mars.haw-hamburg.de/articles/core/model-configuration/index.html).
 

@@ -19,7 +19,7 @@ public class Patient : IAgent<FoodScoreLayer>
     {
         _layer = layer;
         MealScore = 0;
-        Age = 18;
+        Age = 20;
         Context = _layer.Context;
         if (Childhood > 7 && BMI == "normal" && Family_History == false && Type1 == false)
             HealthScore = _random.Next(7, 10);
@@ -33,18 +33,16 @@ public class Patient : IAgent<FoodScoreLayer>
 
     /// <summary>
     ///     The tick method of the Patient which is executed during each time step of the simulation.
-    ///     A Patient can move randomly along diagonal lines. It must stay within the bounds of the FoodScoreLayer
-    ///     and cannot move onto grid cells that are not routable.
+    ///     A Patient is static and simply eats or changes their diet. It exists on the FoodScoreLayer.
     /// </summary>
     public void Tick()
     {
-        //Each tick is a 24 hour cycle that consists of the total macronutrients eaten by the patient
-        //There will be 15695 ticks over 43 years (18 to 60)
-        //The macronutrients are made up of carbohydrates, fats and proteins
-        //amount meals
-        //diet == meals 
-        //increment health score 
-        //at the end, output the average score -> showing accumaltaion of diet
+        //Each tick is a 24 hour cycle that consists of the total macronutrients eaten by the patient.
+        //There will be about 14610 ticks over 40 years (20 to 60).
+        //The macronutrients are made up of carbohydrates, fats and proteins.
+        //randomise the amount of meals eaten in a day.
+        //increment health score with a meal score.
+        //at the end, output the average score -> showing the accumalataion of diet. 
         var date = (DateTime) Context.CurrentTimePoint; 
         Month = date.Month;
         Day = date.Day;
@@ -71,14 +69,12 @@ public class Patient : IAgent<FoodScoreLayer>
             Eat(menu, meals);
         }
 
-        if (Year == 2061)
+        if (Year == 2060)
         {
-            int total = 365 * 43;
-            HealthScore = HealthScore / total; //max score possible for three most healthy meals a day == 30
+            int total = 365 * 40;
+            HealthScore = HealthScore / total; //max score possible for three most healthy meals a day ~= 30
             Console.WriteLine("Final Score for Patient " + PatientID + ": " + HealthScore);
         }
-        //TO DO: randomise choice of changing diet 
-        //More complex --> descion-making behaviour
         lifestyle = _random.Next(0, 2);
         if (lifestyle == 1)
             ChangeDiet(); //patient does undergo a lifestyle change 
@@ -103,7 +99,12 @@ public class Patient : IAgent<FoodScoreLayer>
         HealthScore += MealScore;
         MealScore = 0; //reset for next day
     }
-
+    /*This method requires extension to further accurately represent
+     * the complexity of a person's diet over their lifetime. 
+     * Currently, this method irons out the scores, making all patients with
+     * varying history end up with similar scores.
+     * If one comments out the usage of this method in the Tick(), the logic of the scores 
+     * is correct, according to knowledge highlighted in the conceptual model.*/
     public void ChangeDiet()
     {
         int choice = _random.Next(3);
@@ -114,7 +115,7 @@ public class Patient : IAgent<FoodScoreLayer>
         else
             Diet = "unhealthy";
         Console.WriteLine("Patient " + PatientID + " Diet is now " + Diet);
-    } //too simple and random
+    } 
     #endregion
 
     #region Fields and Properties

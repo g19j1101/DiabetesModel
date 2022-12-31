@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\camil\\Documents\\HONOURS 2022\\Diabetes\\Diabetes\\Diabetes.csproj": {}
+    "C:\\Users\\camil\\Documents\\HONOURS 2022\\Diabetes\\Diabetes\\Diabetes.csproj": {}
   },
   "projects": {
-    "c:\\Users\\camil\\Documents\\HONOURS 2022\\Diabetes\\Diabetes\\Diabetes.csproj": {
+    "C:\\Users\\camil\\Documents\\HONOURS 2022\\Diabetes\\Diabetes\\Diabetes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\camil\\Documents\\HONOURS 2022\\Diabetes\\Diabetes\\Diabetes.csproj",
+        "projectUniqueName": "C:\\Users\\camil\\Documents\\HONOURS 2022\\Diabetes\\Diabetes\\Diabetes.csproj",
         "projectName": "Diabetes",
-        "projectPath": "c:\\Users\\camil\\Documents\\HONOURS 2022\\Diabetes\\Diabetes\\Diabetes.csproj",
+        "projectPath": "C:\\Users\\camil\\Documents\\HONOURS 2022\\Diabetes\\Diabetes\\Diabetes.csproj",
         "packagesPath": "C:\\Users\\camil\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\camil\\Documents\\HONOURS 2022\\Diabetes\\Diabetes\\obj\\",
+        "outputPath": "C:\\Users\\camil\\Documents\\HONOURS 2022\\Diabetes\\Diabetes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\camil\\AppData\\Roaming\\NuGet\\NuGet.Config"
